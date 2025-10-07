@@ -104,6 +104,14 @@ class User
     }
 
 
+    // Getters simples
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
     // Méthode privée pour retrouver un utilisateur
     private function getUserByLogin($login)
     {
