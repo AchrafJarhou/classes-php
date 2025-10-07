@@ -80,6 +80,12 @@ class User
         return false;
     }
 
+    // Vérifier si connecté
+    public function isConnected()
+    {
+        return $this->isConnected;
+    }
+
 
 
     // Récupérer toutes les infos

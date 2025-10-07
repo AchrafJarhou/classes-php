@@ -9,7 +9,7 @@ $user = new User();
 // print_r($newUser);
 
 // Connexion
-if ($user->connect("lala", "1234")) {
+if ($user->connect("achraf", "1234")) {
     echo "Connecté !<br>";
     print_r($user->getAllInfos());
 }
@@ -20,6 +20,11 @@ if ($user->connect("lala", "1234")) {
 //     echo "Déconnecté !<br>";
 //     print_r($user->getAllInfos());
 // }
-if ($user->delete()) {
-    echo "Utilisateur supprimé";
+// if ($user->delete()) {
+//     echo "Utilisateur supprimé";
+// }
+if ($user->isConnected()) {
+    echo "L'utilisateur est connecté<br>";
+} else {
+    echo "L'utilisateur n'est pas connecté<br>";
 }
