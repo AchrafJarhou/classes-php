@@ -79,6 +79,26 @@ class User
         }
         return false;
     }
+    // Mettre à jour l'utilisateur
+    public function update($login, $password, $email, $firstname, $lastname)
+    {
+        if (!$this->isConnected) {
+            return false;
+        }
+
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $this->conn->prepare("UPDATE utilisateurs SET login=?, password=?, email=?, firstname=?, lastname=? WHERE id=?");
+        $stmt->bind_param("sssssi", $login, $passwordHash, $email, $firstname, $lastname, $this->id);
+
+        if ($stmt->execute()) {
+            $this->login = $login;
+            $this->email = $email;
+            $this->firstname = $firstname;
+            $this->lastname = $lastname;
+            return true;
+        }
+        return false;
+    }
 
     // Vérifier si connecté
     public function isConnected()

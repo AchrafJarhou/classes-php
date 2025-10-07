@@ -28,3 +28,9 @@ if ($user->isConnected()) {
 } else {
     echo "L'utilisateur n'est pas connecté<br>";
 }
+if ($user->update("achraf", "1234", "achraf@gmail.com", "Achraf", "Jamin")) {
+    echo "Utilisateur mis à jour<br>";
+    print_r($user->getAllInfos());
+} else {
+    echo "Échec de la mise à jour<br>";
+}
