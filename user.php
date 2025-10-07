@@ -67,6 +67,20 @@ class User
         return true;
     }
 
+    // Supprimer un utilisateur connecté
+    public function delete()
+    {
+        if ($this->isConnected && $this->id) {
+            $stmt = $this->conn->prepare("DELETE FROM utilisateurs WHERE id = ?");
+            $stmt->bind_param("i", $this->id);
+            $stmt->execute();
+            $this->disconnect();
+            return true;
+        }
+        return false;
+    }
+
+
 
     // Récupérer toutes les infos
     public function getAllInfos()
