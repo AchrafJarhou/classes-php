@@ -55,6 +55,18 @@ class User
         return false;
     }
 
+    // Déconnexion
+    public function disconnect()
+    {
+        $this->id = null;
+        $this->login = null;
+        $this->email = null;
+        $this->firstname = null;
+        $this->lastname = null;
+        $this->isConnected = false;
+        return true;
+    }
+
 
     // Récupérer toutes les infos
     public function getAllInfos()
@@ -81,4 +93,5 @@ class User
         $result = $stmt->get_result();
         return $result->fetch_assoc();
     }
+
 }
