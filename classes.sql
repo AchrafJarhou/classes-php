@@ -10,3 +10,5 @@ CREATE TABLE utilisateurs (
     firstname VARCHAR(100),
     lastname VARCHAR(100)
 );
+use classes;
+ALTER TABLE utilisateurs MODIFY COLUMN login VARCHAR(50) NOT NULL;
