@@ -130,6 +130,26 @@ class User
     {
         return $this->id;
     }
+    
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
 
 
     // Méthode privée pour retrouver un utilisateur

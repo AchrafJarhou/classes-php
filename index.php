@@ -24,7 +24,7 @@ if ($user->connect("achraf", "1234")) {
 //     echo "Utilisateur supprimé";
 // }
 if ($user->isConnected()) {
-    echo "L'utilisateur $user->login qui a l'id : {$user->getId()} est connecté<br>";
+    echo "L'utilisateur {$user->getLogin()} qui a l'id : {$user->getId()} est connecté<br>";
 } else {
     echo "L'utilisateur n'est pas connecté<br>";
 }
