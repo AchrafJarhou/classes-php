@@ -1,15 +1,15 @@
 <?php
 
-require "User.php";
+require "user-pdo.php";
 
 $user = new User();
 
 // Inscription
-// $newUser = $user->register("lala", "1234", "lala@mail.com", "lala", "jamin");
+// $newUser = $user->register("fifi", "1234", "fifi@mail.com", "fifi", "jamin");
 // print_r($newUser);
 
 // Connexion
-if ($user->connect("achraf", "1234")) {
+if ($user->connect("jean", "1234")) {
     echo "Connecté !<br>";
     print_r($user->getAllInfos());
 }
@@ -28,9 +28,15 @@ if ($user->isConnected()) {
 } else {
     echo "L'utilisateur n'est pas connecté<br>";
 }
-if ($user->update("achraf", "1234", "achraf@gmail.com", "Achraf", "Jamin")) {
+if ($user->update("jean", "1234", "jean@gmail.com", "fifi", "yasmine")) {
     echo "Utilisateur mis à jour<br>";
     print_r($user->getAllInfos());
 } else {
     echo "Échec de la mise à jour<br>";
 }
+
+
+
+// $user->delete();
+
+var_dump($user->fetchAll());
